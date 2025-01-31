@@ -1,0 +1,108 @@
+:root {
+    --bg-color: #121212;
+    --font-color: #F4F4F4;
+    --date-color: #FFF;
+    --card-task: #222;
+    --card-shadow-rgb: 100;
+    --card-shadow-a: 0.3;
+}
+
+html {
+    height: 100%;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+body {
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
+
+.nav-bar {
+    text-align: center;
+    font-size: x-large;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 10vh;
+    margin: 0 auto;
+}
+
+.main-content {
+    margin-top: 20vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    height: 70vh;
+}
+
+/* watch */
+.watch {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.date {
+    margin-top: 10vh;
+    font-size: xx-large;
+
+    color: var(--date-color);
+}
+
+.clock {
+    font-size: x-large;
+    margin: 1vh 1vw;
+}
+
+/* tasks */
+.task-content {
+    background-color: var(--card-task);
+}
+
+/* fonts */
+.knewave-regular {
+    font-family: "Knewave", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* card list */
+.box-list {
+    margin: 1vh 1vw;
+    border-radius: 10px;
+
+    box-shadow: 0 0 15px rgba(var(--card-shadow-rgb), var(--card-shadow-rgb), var(--card-shadow-rgb), var(--card-shadow-a));
+}
+
+ul.opened-list, ul.closed-list {
+    list-style-type: none;
+    padding-bottom: 1vh;
+}
+
+li.task-opened, li.task-closed {
+    margin: 3px auto;
+}
+
+p.title-list {
+    padding-left: 1vw;
+    padding-top: 1vh;
+}
+
+.sour-gummy {
+    font-family: "Sour Gummy", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}

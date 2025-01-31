@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Knewave&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="assests/favicon.ico" />
+    <title>Awesome TODO</title>
+</head>
+
+<body>
+    <nav>
+        <p class="nav-bar sour-gummy">A simple todo list</p>
+    </nav>
+
+    <div class="main-content">
+        <div class="watch knewave-regular">
+            <div id="date" class="date">31/01/2025</div>
+            <div id="clock" class="clock">00:00</div>
+        </div>
+
+        <div class="task-content sour-gummy">
+            <input class="new-task" type="text" placeholder="Uma tarefa muito legal!!">
+            <select name="color" id="drop-down-color">
+                <option value="blue">Azul</option>
+                <option value="yellow" selected>Amarelo</option>
+                <option value="red">Vermelho</option>
+                <option value="green">Verde</option>
+            </select>
+            <button class="add-button">add</button>
+
+            <div class="box-list">
+                <p class="title-list">Open</p>
+                <ul class="opened-list">
+                    <li class="task-opened">itens da lista</li>
+                    <li class="task-opened">itens da lista</li>
+                    <li class="task-opened">itens da lista</li>
+                    <li class="task-opened">itens da lista</li>
+                    <li class="task-opened">itens da lista</li>
+                    <li class="task-opened">itens da lista</li>
+                </ul>
+            </div>
+
+            <div class="box-list">
+                <p class="title-list">Closed</p>
+                <ul class="closed-list">
+                    <li class="task-closed">itens da lista</li>
+                    <li class="task-closed">itens da lista</li>
+                    <li class="task-closed">itens da lista</li>
+                    <li class="task-closed">itens da lista</li>
+                    <li class="task-closed">itens da lista</li>
+                    <li class="task-closed">itens da lista</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="main.js"></script>
+
+</html>
