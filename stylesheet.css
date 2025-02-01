@@ -68,6 +68,36 @@ body {
 /* tasks */
 .task-content {
     background-color: var(--card-task);
+
+    max-width: 50vw;
+    min-width: 40vw;
+
+    border-radius: 25px;
+}
+
+/* add tasks */
+.add-task {
+    margin: 3vh auto;
+    text-align: center;
+}
+
+.task-name {
+    height: 3vh;
+    width: 25vw;
+
+    border-radius: 3px;
+}
+
+.drop-down-color {
+    height: 4vh;
+
+    border-radius: 3px;
+}
+
+.add-button {
+    height: 4vh;
+
+    border-radius: 3px;
 }
 
 /* fonts */

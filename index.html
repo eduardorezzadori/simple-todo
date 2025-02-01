@@ -26,14 +26,16 @@
         </div>
 
         <div class="task-content sour-gummy">
-            <input id="task-name" class="task-name" type="text" placeholder="Uma tarefa muito legal!!">
-            <select name="color" id="drop-down-color">
-                <option value="blue">Azul</option>
-                <option value="yellow" selected>Amarelo</option>
-                <option value="red">Vermelho</option>
-                <option value="green">Verde</option>
-            </select>
-            <button class="add-button" onclick="UI.addTask()">add</button>
+            <div class="add-task">
+                <input id="task-name" class="task-name" type="text" placeholder="Uma tarefa muito legal!!">
+                <select name="color" id="drop-down-color" class="drop-down-color">
+                    <option value="blue">Azul</option>
+                    <option value="yellow" selected>Amarelo</option>
+                    <option value="red">Vermelho</option>
+                    <option value="green">Verde</option>
+                </select>
+                <button class="add-button" onclick="UI.addTask()">add</button>
+            </div>
 
             <div class="box-list">
                 <p class="title-list">Open</p>
