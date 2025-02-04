@@ -2,21 +2,27 @@ class UI {
 
     static tasks = [
         {
+            id: 0,
             name: "Mercado",
             color: "Azul",
             isOpen: true
         },
         {
+            id: 1,
             name: "Veterinario",
             color: "Azul",
             isOpen: true
         },
         {
+            id: 2,
             name: "Mecânico",
             color: "Azul",
             isOpen: true
         },
     ];
+
+    static openedTaskCount = 0;
+    static closFedTaskCount = 0;
 
     static refreshWatch() {
         let year, month, day, hours, minutes, date;
@@ -52,6 +58,8 @@ class UI {
         newTask.classList.add("task-opened");
         newTask.classList.add(`${color}`);
 
+        newTask.id = `new-task-${this.openedTaskCount}`
+
         newTask.addEventListener("click", this.closeTask);
 
         box.appendChild(newTask);
@@ -62,6 +70,7 @@ class UI {
         const name = document.getElementById("task-name").value;
 
         this.tasks.push({
+            id: this.openedTaskCount,
             name: name,
             color: color,
             isOpen: true
@@ -70,8 +79,19 @@ class UI {
         this.appendTask(name, color);
     }
 
-    static closeTask() {
-        console.log("fechei");
+    static closeTask(event) {
+        const eventId = event.currentTarget.id;
+        const task = document.getElementById(eventId);
+
+        const box = document.getElementById("closed-list");
+
+        task.classList.remove("task-opened")
+        task.classList.add("task-closed")
+
+        box.appendChild(task);
+
+        task.remove()
+
     }
 
     static renderTasks() {
@@ -85,10 +105,15 @@ class UI {
             newTask.appendChild(newContent);
 
             newTask.classList.add("task-opened");
+            newTask.classList.add(`${task.color}`);
+
+            newTask.id = `new-task-${task.id}`
 
             newTask.addEventListener("click", this.closeTask);
 
             box.appendChild(newTask);
+
+            this.openedTaskCount++;
         }
     }
 
