@@ -4,19 +4,19 @@ class UI {
         {
             id: 0,
             name: "Mercado",
-            color: "Azul",
+            color: "blue",
             isOpen: true
         },
         {
             id: 1,
             name: "Veterinario",
-            color: "Azul",
+            color: "blue",
             isOpen: true
         },
         {
             id: 2,
             name: "Mecânico",
-            color: "Azul",
+            color: "blue",
             isOpen: true
         },
     ];
@@ -46,19 +46,22 @@ class UI {
         }, 300);
     }
 
-    static appendTask(name, color) {
+    static appendTask(name, color, id) {
         const box = document.getElementById("opened-list");
 
         const newTask = document.createElement("li");
-
+        const colorTask = document.createElement("div");
         const newContent = document.createTextNode(`${name}`);
 
+        newTask.appendChild(colorTask);
         newTask.appendChild(newContent);
 
-        newTask.classList.add("task-opened");
-        newTask.classList.add(`${color}`);
+        colorTask.classList.add("color-task")
+        colorTask.classList.add(`${color}`);
 
-        newTask.id = `new-task-${this.openedTaskCount}`
+        newTask.classList.add("task-opened");
+
+        newTask.id = `new-task-${id}`
 
         newTask.addEventListener("click", this.closeTask);
 
@@ -76,7 +79,7 @@ class UI {
             isOpen: true
         })
 
-        this.appendTask(name, color);
+        this.appendTask(name, color, this.openedTaskCount);
     }
 
     static closeTask(event) {
@@ -89,30 +92,13 @@ class UI {
         task.classList.add("task-closed")
 
         box.appendChild(task);
-
-        task.remove()
-
     }
 
     static renderTasks() {
         const box = document.getElementById("opened-list");
 
         for (const task of UI.tasks) {
-            const newTask = document.createElement("li");
-
-            const newContent = document.createTextNode(`${task.name}`);
-
-            newTask.appendChild(newContent);
-
-            newTask.classList.add("task-opened");
-            newTask.classList.add(`${task.color}`);
-
-            newTask.id = `new-task-${task.id}`
-
-            newTask.addEventListener("click", this.closeTask);
-
-            box.appendChild(newTask);
-
+            this.appendTask(task.name, task.color, task.id)
             this.openedTaskCount++;
         }
     }

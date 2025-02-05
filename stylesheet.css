@@ -75,6 +75,28 @@ body {
     border-radius: 25px;
 }
 
+.color-task {
+    height: 2vh;
+    width: 0.2vw;
+
+    border-radius: 2px;
+
+    margin-right: 0.7vw;
+}
+
+.blue {
+    background-color: blue;
+}
+.yellow {
+    background-color: yellow;
+}
+.green {
+    background-color: green;
+}
+.red {
+    background-color: red;
+}
+
 /* add tasks */
 .add-task {
     margin: 3vh auto;
@@ -115,13 +137,18 @@ body {
     box-shadow: 0 0 15px rgba(var(--card-shadow-rgb), var(--card-shadow-rgb), var(--card-shadow-rgb), var(--card-shadow-a));
 }
 
-ul.opened-list, ul.closed-list {
+ul.opened-list,
+ul.closed-list {
     list-style-type: none;
     padding-bottom: 1vh;
 }
 
-li.task-opened, li.task-closed {
+li.task-opened,
+li.task-closed {
     margin: 3px auto;
+
+    display: flex;
+    flex-direction: row;
 }
 
 p.title-list {
